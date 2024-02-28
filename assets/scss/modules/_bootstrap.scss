@@ -1,0 +1,48 @@
+@use './vars';
+@use 'sass:color';
+
+@import '../../../node_modules/bootstrap/scss/functions';
+
+$body-bg: vars.$dark-blue;
+
+$link-decoration: none;
+
+$input-border-radius: vars.$radius;
+$input-border-color: vars.$grey-2;
+$input-focus-box-shadow: 0 0 6px grey;
+$input-focus-border-color: color.adjust(vars.$dark-blue, $lightness: 40%);
+
+$custom-colors: (
+    'primary': vars.$dark-blue,
+    'secondary': vars.$light-purple,
+    'success': vars.$aqua
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 940px,
+    xl: 1100px,
+    xxl: 1280px
+);
+
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/variables-dark';
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import '../../../node_modules/bootstrap/scss/maps';
+@import '../../../node_modules/bootstrap/scss/mixins';
+@import '../../../node_modules/bootstrap/scss/root';
+
+@import '../../../node_modules/bootstrap/scss/utilities';
+@import '../../../node_modules/bootstrap/scss/reboot';
+@import '../../../node_modules/bootstrap/scss/type';
+// @import '../../../node_modules/bootstrap/scss/images';
+@import '../../../node_modules/bootstrap/scss/containers';
+@import '../../../node_modules/bootstrap/scss/grid';
+@import '../../../node_modules/bootstrap/scss/helpers';
+
+@import '../../../node_modules/bootstrap/scss/buttons';
+
+@import '../../../node_modules/bootstrap/scss/utilities/api';

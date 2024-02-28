@@ -1,0 +1,23 @@
+@use '../vars';
+@use '../../../../node_modules/frigattos' as fg;
+
+.app-footer
+{
+    @include fg.center;
+    border-top: solid 1px white;
+    padding: 1.5rem;
+    color: vars.$light-font;
+    gap: 1rem;
+
+    a
+    {
+        font-size: 1.5rem;
+        color: vars.$light-font;
+        transition: .2s;
+
+        &:hover
+        {
+            color: vars.$aqua;
+        }
+    }
+}
