@@ -376,12 +376,11 @@
             }
         }
 
-        .main-project-container
+        .project-grid
         {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: .8rem;
-            margin-bottom: 3rem;
 
             @media screen and (max-width: 1200px)
             {
@@ -496,38 +495,6 @@
                         height: 9rem;
                     }
                 }
-            }
-        }
-
-        .project-link
-        {
-            @include fg.center;
-            align-self: center;
-            gap: .5rem;
-            width: max-content;
-            color: vars.$light-font;
-            border: 1px solid white;
-            padding: .7rem .9rem;
-            transition: .2s;
-
-            i
-            {
-                font-size: 1.5rem;
-                line-height: 0;
-            }
-
-            &:hover
-            {
-                background: vars.$aqua;
-                border: 1px solid vars.$aqua;
-                color: vars.$dark-font;
-            }
-
-            @media screen and (max-width: 768px)
-            {
-                background: vars.$aqua;
-                border: 1px solid vars.$aqua;
-                color: vars.$dark-font;
             }
         }
     }
