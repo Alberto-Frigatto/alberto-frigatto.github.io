@@ -61,7 +61,6 @@ skillCards.forEach(skillCard => {
 
         skillCard.classList.add('active')
         skillDescriptionContainer.innerHTML = skillDescriptions[skillCard.id]
-        skillDescriptionContainer.classList.add('d-block')
         skillDescriptionContainer.classList.add('mt-4')
     })
 })
