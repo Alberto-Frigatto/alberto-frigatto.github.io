@@ -98,7 +98,7 @@
             box-shadow: inset 75vw 0 6rem vars.$dark-blue;
         }
 
-        @media screen and (max-width: 768px)
+        @media screen and (max-width: 767px)
         {
             background-image: unset;
             height: unset;
@@ -192,11 +192,19 @@
                     font-size: calc(1.8rem + 2vw);
                 }
 
-                &.active,
-                &:hover
+                &.active
                 {
                     background: vars.$light-grey;
                     color: vars.$dark-blue;
+                }
+
+                @media screen and (min-width: 992px)
+                {
+                    &:hover
+                    {
+                        background: vars.$light-grey;
+                        color: vars.$dark-blue;
+                    }
                 }
             }
         }
@@ -455,7 +463,7 @@
                         color: vars.$light-font;
                     }
 
-                    @media screen and (max-width: 768px)
+                    @media screen and (max-width: 992px)
                     {
                         background: vars.$dark-blue;
                         color: vars.$light-font;

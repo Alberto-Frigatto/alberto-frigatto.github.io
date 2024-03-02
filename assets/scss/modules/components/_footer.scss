@@ -15,9 +15,12 @@
         color: vars.$light-font;
         transition: .2s;
 
-        &:hover
+        @media screen and (min-width: 992px)
         {
-            color: vars.$aqua;
+            &:hover
+            {
+                color: vars.$aqua;
+            }
         }
     }
 }
