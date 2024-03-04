@@ -1,4 +1,4 @@
-const skillCards = document.querySelectorAll('.skill-grid .card');
+const skillCards = document.querySelectorAll('.skill-grid .card')
 const skillDescriptionContainer = document.getElementById('skill-description')
 const skillDescriptions = {
     python: `<p>Com dois anos de experiência, eu mergulho fundo no <b>Python</b> para explorar duas áreas empolgantes: <b>ciência de dados</b> e <b>desenvolvimento web</b>.</p>
@@ -64,3 +64,44 @@ skillCards.forEach(skillCard => {
         skillDescriptionContainer.classList.add('mt-4')
     })
 })
+
+const form = document.getElementById('email-form')
+
+async function handleSubmit(event) {
+    event.preventDefault()
+    const status = document.getElementById('email-form-status')
+    let data = new FormData(event.target)
+
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            status.innerHTML = event.target.classList.contains('portuguese') ?
+                '<i class="bi bi-check-lg text-success"></i><span>Mensagem enviada!</span>' :
+                '<i class="bi bi-check-lg text-success"></i><span>Message sent!</span>'
+            status.classList.add('d-flex')
+            status.classList.remove('d-none')
+
+            event.target.reset()
+        } else {
+            response.json().then(data => {
+                status.innerHTML = event.target.classList.contains('portuguese') ?
+                    '<i class="bi bi-x-circle text-danger"></i><span>Houve um problema e não foi possível enviar a mensagem</span>' :
+                    '<i class="bi bi-x-circle text-danger"></i><span>There was a problem and the mensage couldn\'t be sent</span>'
+                status.classList.add('d-flex')
+                status.classList.remove('d-none')
+            })
+        }
+    }).catch(error => {
+        status.innerHTML = event.target.classList.contains('portuguese') ?
+            '<i class="bi bi-x-circle text-danger"></i><span>Houve um problema e não foi possível enviar a mensagem</span>' :
+            '<i class="bi bi-x-circle text-danger"></i><span>There was a problem and the mensage couldn\'t be sent</span>'
+        status.classList.add('d-flex')
+        status.classList.remove('d-none')
+    })
+}
+form.addEventListener('submit', handleSubmit)
