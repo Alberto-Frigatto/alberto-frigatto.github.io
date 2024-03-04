@@ -7,15 +7,21 @@ $body-bg: vars.$dark-blue;
 
 $link-decoration: none;
 
+$input-bg: white;
+$input-padding-y: .7rem;
+$input-padding-x: .9rem;
 $input-border-radius: vars.$radius;
-$input-border-color: vars.$grey-2;
-$input-focus-box-shadow: 0 0 6px grey;
-$input-focus-border-color: color.adjust(vars.$dark-blue, $lightness: 40%);
+$input-border-color: color.adjust(vars.$light-purple, $lightness: -3%);
+$input-focus-box-shadow: unset;
+$input-focus-border-color: color.adjust(vars.$dark-blue, $lightness: 30%);
+$input-border-width: 2px;
+$input-placeholder-color: #979797;
 
 $custom-colors: (
     'primary': vars.$dark-blue,
     'secondary': vars.$light-purple,
-    'success': vars.$aqua
+    'success': vars.$aqua,
+    'danger': rgb(207, 0, 69)
 );
 
 $container-max-widths: (
@@ -27,7 +33,7 @@ $container-max-widths: (
 );
 
 @import '../../../node_modules/bootstrap/scss/variables';
-@import '../../../node_modules/bootstrap/scss/variables-dark';
+@import "../../../node_modules/bootstrap/scss/variables-dark";
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
@@ -35,14 +41,14 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import '../../../node_modules/bootstrap/scss/mixins';
 @import '../../../node_modules/bootstrap/scss/root';
 
-@import '../../../node_modules/bootstrap/scss/utilities';
-@import '../../../node_modules/bootstrap/scss/reboot';
-@import '../../../node_modules/bootstrap/scss/type';
-// @import '../../../node_modules/bootstrap/scss/images';
-@import '../../../node_modules/bootstrap/scss/containers';
-@import '../../../node_modules/bootstrap/scss/grid';
-@import '../../../node_modules/bootstrap/scss/helpers';
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/containers";
+@import "../../../node_modules/bootstrap/scss/grid";
+@import "../../../node_modules/bootstrap/scss/helpers";
 
 @import '../../../node_modules/bootstrap/scss/buttons';
+@import '../../../node_modules/bootstrap/scss/forms/form-control';
+@import '../../../node_modules/bootstrap/scss/forms/labels';
 
 @import '../../../node_modules/bootstrap/scss/utilities/api';
