@@ -1,0 +1,20 @@
+@use './vars';
+@use '../../../node_modules/frigattos' as fg;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@include fg.include-fonts(
+    (
+        name: 'roboto',
+        define: 'text'
+    )
+);
+
+body
+{
+    @include fg.include-scrollbar(vars.$light-purple, vars.$dark-blue);
+}
+
+h1, h2, h3
+{
+    font-family: 'Pacifico';
+}

@@ -1,0 +1,32 @@
+@use '../vars';
+@use '../../../../node_modules/frigattos' as fg;
+
+.content-section
+{
+    padding-block: 2rem 4rem;
+
+    & > div
+    {
+        @include fg.column;
+        gap: 2rem
+    }
+
+    header
+    {
+        @include fg.column-center;
+        gap: 1.3rem;
+
+        *
+        {
+            margin: 0;
+        }
+    }
+
+    @media screen and (max-width: 768px)
+    {
+        & > div
+        {
+            padding-inline: 1.3rem;
+        }
+    }
+}
