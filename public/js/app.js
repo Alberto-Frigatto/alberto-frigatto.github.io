@@ -104,4 +104,6 @@ async function handleSubmit(event) {
         status.classList.remove('d-none')
     })
 }
-form.addEventListener('submit', handleSubmit)
+
+if (form)
+    form.addEventListener('submit', handleSubmit)
