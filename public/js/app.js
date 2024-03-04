@@ -1,6 +1,6 @@
 const skillCards = document.querySelectorAll('.skill-grid .card')
 const skillDescriptionContainer = document.getElementById('skill-description')
-const skillDescriptions = {
+const skillDescriptionsPt = {
     python: `<p>Com dois anos de experiência, eu mergulho fundo no <b>Python</b> para explorar duas áreas empolgantes: <b>ciência de dados</b> e <b>desenvolvimento web</b>.</p>
             <p>Na ciência de dados, faço uso intensivo de bibliotecas como <i>Pandas</i>, <i>Seaborn</i>, <i>NumPy</i>, <i>Matplotlib</i>, <i>SciPy</i>, <i>Scikit Learn</i>, e outras onde trabalho em estatística e inteligência artificial para extrair insights significativos.</p>
             <p>Além disso, no desenvolvimento web, uso o <i>Flask</i>, <i>Flask-RESTful</i>, <i>SQLAlchemy</i>, e outros pacotes para construir aplicações web eficientes e robustas.</p>
@@ -55,12 +55,70 @@ const skillDescriptions = {
             <p>O <b>Git e GitHub<b> são elementos essenciais em minha jornada de desenvolvimento, proporcionando uma base sólida para a gestão de código-fonte e o trabalho em equipe.</p>`
 }
 
+const skillDescriptionsEn = {
+    python: `<p>With two years of experience, I dive deep into <b>Python</b> to explore two exciting areas: <b>data science</b> and <b>web development</b>.</p>
+            <p>In data science, I make intensive use of libraries like <i>Pandas</i>, <i>Seaborn</i>, <i>NumPy</i>, <i>Matplotlib</i>, <i>SciPy</i>, <i>Scikit Learn</i>, and others where I work on statistics and artificial intelligence to extract meaningful insights.</p>
+            <p>Furthermore, in web development, I use <i>Flask</i>, <i>Flask-RESTful</i>, <i>SQLAlchemy</i>, and other packages to build efficient and robust web applications.</p>
+            <p>My journey with Python highlights how this versatile language meets the demands of complex projects in different fields, providing opportunities for continuous learning and innovation.</p>`,
+    java: `<p>With one year of experience, I delve into the world of <b>Java</b> with a special focus on <b>web development</b>, utilizing the <i>Apache Tomcat</i> server and <i>servlets</i> to create dynamic and scalable applications.</p>
+            <p>The learning journey at <b>FIAP</b> has been a source of inspiration, where I am immersed in fundamental and practical Java concepts.</p>
+            <p>This year, I am excited to expand my horizons and dive into the world of <b>Spring Boot</b>, a powerful framework that promises to simplify Java application development with its convention-based approach.</p>
+            <p>My journey with Java highlights the importance of continuous learning and adapting to emerging technologies to build efficient and innovative solutions in the world of web development.</p>`,
+    html5: `<p>With three years of experience, I dive into the realm of <b>HTML5</b> with an approach centered on the use of semantic tags to organize code and promote accessibility.</p>
+            <p>Semantic tags such as <i>&lt;header&gt;</i>, <i>&lt;nav&gt;</i>, <i>&lt;main&gt;</i>, <i>&lt;section&gt;</i>, <i>&lt;article&gt;</i>, and <i>&lt;footer&gt;</i> are essential for creating clear and understandable structures for developers and users.</p>
+            <p>Furthermore, I prioritize accessibility in my <b>HTML5</b> projects, using descriptive attributes like <i>alt</i> for images and appropriate labels in forms to ensure that all users have an inclusive experience.</p>
+            <p>My journey with <b>HTML5</b> underscores the importance of responsible development practices to create accessible and meaningful websites.</p>`,
+    css3: `<p>With three years of experience, I excel in the world of <b>CSS3</b> using advanced techniques such as <i>Flexbox</i> and <i>Grid</i> to build optimized and appealing interfaces.</p>
+            <p>Furthermore, I intelligently leverage CSS selector features to optimize my stylesheet, ensuring easier maintenance and cleaner code.</p>
+            <p>Responsiveness is a priority in my CSS projects, ensuring that my interfaces seamlessly adapt to a wide range of devices, from smartphones to desktops.</p>
+            <p>My journey with <b>CSS</b> underscores my commitment to excellence in design and usability, creating interfaces that not only visually impress but also offer an exceptional user experience in any context.</p>`,
+    sass: `<p>With two years of experience, <b>Sass</b> has become an essential tool to optimize my <i>CSS</i> development.</p>
+            <p>I make extensive use of features such as <i>nesting</i>, <i>modules</i>, <i>mixins</i>, <i>functions</i>, and <i>variables</i> to make my code more modular, reusable, and easy to maintain.</p>
+            <p><b>Nesting</b> allows me to structure my code hierarchically, reflecting the structure of the <i>HTML</i>, while <b>modules</b> logically organize different parts of the style. <b>Mixins and functions</b> encapsulate common styles and repetitive logic, reducing code duplication. The use of <b>variables</b> makes it easier to manage colors, sizes, and other properties across the stylesheet.</p>
+            <p>My journey with <b>Sass</b> underscores my continuous pursuit of efficiency and constant improvement in creating styles for my projects, providing a smoother and more productive development experience.</p>`,
+    js: `<p>With three years of experience, <b>JavaScript</b> has become a fundamental tool in my development arsenal.</p>
+            <p>I use it to make my pages more <b>interactive</b> and <b>dynamic</b>, providing an engaging experience to users.</p>
+            <p>Furthermore, I make good use of the JavaScript <b>ecosystem</b>, including the package manager <i>npm</i> and the runtime environment <i>Node.js</i>.</p>
+            <p>These technologies allow me to leverage powerful libraries and frameworks, develop server-side applications, and create scalable and efficient solutions.</p>
+            <p>With JavaScript, I continue to explore new possibilities and refine my skills to deliver increasingly better web experiences.</p>`,
+    react: `<p>With one year of experience, <b>ReactJS</b> has become a powerful tool in my web development arsenal.</p>
+            <p>I make excellent use of modularization to optimize the code, not only of the components but also of the styles associated with them.</p>
+            <p>Furthermore, I make the most of ReactJS's reactive properties, ensuring a smooth and responsive user experience.</p>
+            <p>To speed up development, I make use of popular libraries like <i>React Bootstrap</i>, <i>React Icons</i>, <i>React Router</i>, and others, which offer a wide range of pre-built components and functionalities.</p>
+            <p>With <b>ReactJS</b>, I continue to explore new ways to create modern and efficient user interfaces, propelling my web development journey to new heights.</p>`,
+    oracle: `<p>With one year of experience, <b>Oracle Database</b> has become an essential part of my database skills.</p>
+            <p>I have mastery in advanced features, including the creation and usage of <i>procedures</i> and <i>functions</i>, as well as crafting complex queries with <i>subqueries</i>, enabling efficient data manipulation and retrieval.</p>
+            <p>Furthermore, I apply conventions appropriately, such as using sequences to ensure primary key uniqueness and employing more efficient native data types to optimize database performance.</p>
+            <p>With <b>Oracle Database</b>, I continue to deepen my knowledge and explore new features to develop robust and efficient data management solutions.</p>`,
+    sqlserver: `<p>With two and a half years of experience, <b>SQL Server</b> plays a key role in my database management journey.</p>
+            <p>I have the ability to utilize advanced features, such as constructing queries with <i>subqueries</i>, enabling efficient and structured data manipulation.</p>
+            <p>Furthermore, I apply conventions appropriately, including the use of the <i>GO</i> keyword to separate batches of commands, selecting more efficient native data types to enhance database performance and efficiency.</p>
+            <p>Another area where I excel is in user administration, ensuring secure and controlled access to database data through proper permissions and configurations.</p>
+            <p>With <b>SQL Server</b>, I continue to refine my skills and explore new ways to manage and optimize database performance, contributing to the success of data-related projects and operations.</p>`,
+    mysql: `<p>With 2 and a half years of experience, <b>MySQL</b> is a crucial part of my database management skill set.</p>
+            <p>I make use of advanced features, such as queries with <i>subqueries</i> and storage of binary files, expanding the capabilities of the database.</p>
+            <p>I adhere to appropriate conventions, such as choosing efficient native data types to optimize performance. Additionally, I appreciate the simplicity and agility of <b>MySQL</b>, especially for prototyping and rapid application development.</p>
+            <p>This platform is a valuable choice in my development journey due to its ease of use and efficiency in prototyping.</p>`,
+    powerbi: `<p>With half a year of experience, <b>PowerBI</b> has been a powerful tool in my data analysis journey.</p>
+            <p>Despite the relatively short period of experience, I can create interactive and appealing dashboards that provide high-value insights.</p>
+            <p><b>PowerBI</b> allows me to visualize and analyze data dynamically, turning numbers into meaningful and understandable information.</p>
+            <p>With its intuitive interface and advanced features, I can explore trends, identify patterns, and make informed decisions effectively.</p>
+            <p>I am constantly refining my skills in <b>PowerBI</b> to deliver increasingly sophisticated and valuable analyses.</p>`,
+    git: `<p>With two years of experience with <b>Git and GitHub</b>, these tools have become fundamental in my personal and academic projects.</p>
+            <p>The use of Git and GitHub significantly facilitates <b>development</b>, <b>organization</b>, and <b>maintenance</b> of code, allowing precise version control, efficient collaboration, and change management.</p>
+            <p>Through <i>branches</i>, <i>pull requests</i>, and other functionalities, I can work collaboratively on projects, track the history of changes, and implement new features safely.</p>
+            <p><b>Git and GitHub</b> are essential elements in my development journey, providing a solid foundation for source code management and teamwork.</p>`
+}
+
+const skillContainer = document.querySelector('.skills')
+
 skillCards.forEach(skillCard => {
     skillCard.addEventListener('click', () => {
         skillCards.forEach(card => card.classList.remove('active'))
 
         skillCard.classList.add('active')
-        skillDescriptionContainer.innerHTML = skillDescriptions[skillCard.id]
+        skillDescriptionContainer.innerHTML =
+            skillContainer.classList.contains('portuguese') ? skillDescriptionsPt[skillCard.id] : skillDescriptionsEn[skillCard.id]
         skillDescriptionContainer.classList.add('mt-4')
     })
 })
